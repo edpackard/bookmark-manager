@@ -8,9 +8,28 @@ As a User
 So I know what I have bookmarked
 I need to to print a list of bookmarks
 
+As a User
+So that I can save a website
+I would like to add the site's address and title to the bookmark manager
+
 ```
 
 Domain Model diagram
 ----------------------
 https://miro.com/app/board/o9J_l2U-ZSE=/
 
+## Setting up a Database
+
+1 - First enter ```psql postgres```
+2 - Create a Database by entering ```CREATE DATABASE < database_name >;```
+3 - Connect to your brand new Database with ```\c < database_name >;```
+4 - Next we need to create a table to store information, this would look like the following
+```
+CREATE [TEMP] TABLE [IF NOT EXISTS] < table_name >(
+  pk SERIAL PRIMARY KEY,
+  c1 type(size) NOT NULL,
+  c2 type(size) NULL,
+   ...
+);
+```
+Both ```[TEMP]``` and ```[IF NOT EXISTS]``` do not have be used to create a new table.
