@@ -20,10 +20,10 @@ https://miro.com/app/board/o9J_l2U-ZSE=/
 
 ## Setting up a Database
 
-1 - First enter ```psql postgres```
-2 - Create a Database by entering ```CREATE DATABASE < database_name >;```
-3 - Connect to your brand new Database with ```\c < database_name >;```
-4 - Next we need to create a table to store information, this would look like the following
+* 1 - First enter ```psql postgres```
+* 2 - Create a Database by entering ```CREATE DATABASE < database_name >;```
+* 3 - Connect to your brand new Database with ```\c < database_name >;```
+* 4 - Next we need to create a table to store information, this would look like the following
 ```
 CREATE [TEMP] TABLE [IF NOT EXISTS] < table_name >(
   pk SERIAL PRIMARY KEY,
@@ -33,3 +33,24 @@ CREATE [TEMP] TABLE [IF NOT EXISTS] < table_name >(
 );
 ```
 Both ```[TEMP]``` and ```[IF NOT EXISTS]``` do not have be used to create a new table.
+
+## How to Create a row entry in your table
+
+INSERT INTO <tablename> (url) VALUES (<'link url in speechmarks'>);
+
+## How to List the your new entry using a SELECT statement
+
+SELECT * FROM <tablename>;
+
+## How to Delete a row using a DELETE statement
+
+DELETE FROM <tablename> WHERE url = 'http://www.askjeeves.com';
+or
+DELETE FROM <tablename> WHERE id = <id-number>;
+
+## How to Update a row using an UPDATE statement
+
+UPDATE <tablename> SET url = <'link url in speechmarks'> WHERE url = <'link url in speechmarks'>;
+
+
+
