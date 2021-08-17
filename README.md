@@ -34,23 +34,43 @@ CREATE [TEMP] TABLE [IF NOT EXISTS] < table_name >(
 ```
 Both ```[TEMP]``` and ```[IF NOT EXISTS]``` do not have be used to create a new table.
 
-## How to Create a row entry in your table
+### How to Create a row entry in your table
+```
+INSERT INTO <table_name> (url) VALUES (<'link url in speechmarks'>);
+```
+### How to List the your new entry using a SELECT statement
+```
+SELECT * FROM <table_name>;
+```
+If you want to select just a single column, enter the following
+```
+SELECT < column_name >
+FROM < table_name >;
+```
 
-INSERT INTO <tablename> (url) VALUES (<'link url in speechmarks'>);
-
-## How to List the your new entry using a SELECT statement
-
-SELECT * FROM <tablename>;
-
-## How to Delete a row using a DELETE statement
-
-DELETE FROM <tablename> WHERE url = 'http://www.askjeeves.com';
+### How to Delete a row using a DELETE statement
+```
+DELETE FROM <table_name>
+WHERE url = 'http://www.askjeeves.com';
+```
 or
-DELETE FROM <tablename> WHERE id = <id-number>;
+```
+DELETE FROM <table_name>
+WHERE id = <id_number>;
+```
 
-## How to Update a row using an UPDATE statement
-
-UPDATE <tablename> SET url = <'link url in speechmarks'> WHERE url = <'link url in speechmarks'>;
+### How to Update a row using an UPDATE statement
+```
+UPDATE <table_name>
+SET url = <'link url in speechmarks'> 
+WHERE url = <'link url in speechmarks'>;
+```
+or
+```
+UPDATE <table_name>
+SET url = <'link url in speechmarks'> 
+WHERE id = <id_number>;
+```
 
 
 

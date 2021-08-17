@@ -2,9 +2,12 @@
 
 source "https://rubygems.org"
 
-
-gem 'rspec'
+gem 'pg'
 gem 'sinatra'
 gem 'sinatra-reloader'
-gem 'capybara'
 gem 'webrick'
+
+group :test do
+  gem 'rspec'
+  gem 'capybara'
+end
