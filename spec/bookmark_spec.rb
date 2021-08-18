@@ -5,8 +5,11 @@ describe Bookmark do
   describe '.all' do
 
     it 'returns all bookmarks' do
-      bookmarks = Bookmark.all
-      expect(bookmarks).to contain_exactly("http://www.makersacademy.com", "http://www.google.com", "http://facebook.com")
+      bookmark_manager = Bookmark.all
+    
+      expect(bookmark_manager).to include "http://www.makersacademy.com/"
+      expect(bookmark_manager).to include "http://www.google.com/"
+      expect(bookmark_manager).to include "http://www.destroyallsoftware.com/"
     end
     
   end
