@@ -72,5 +72,10 @@ SET url = <'link url in speechmarks'>
 WHERE id = <id_number>;
 ```
 
-
+## Setting up a Test Database
+```
+$> psql
+admin=# CREATE DATABASE "bookmark_manager_test";
+admin=# CREATE TABLE bookmarks(id SERIAL PRIMARY KEY, url VARCHAR(60));
+```
 
