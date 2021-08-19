@@ -8,7 +8,7 @@ class Manager < Sinatra::Base
   end
 
   get '/' do
-    "Hello, World!"
+    "Hello, World!" # erb index?
   end
 
   get '/bookmarks' do 
