@@ -8,7 +8,13 @@ class Manager < Sinatra::Base
   end
 
   get '/' do
-    "Hello, World!" # erb index?
+    
+    erb(:index)
+    
+  end
+
+  get '/add' do
+    'Add a bookmark'
   end
 
   get '/bookmarks' do 

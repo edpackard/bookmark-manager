@@ -17,7 +17,7 @@ feature "adding a bookmark" do
   
   scenario 'click on homepage button to access add page' do
     visit '/'
-    click_button ('Add')
+    click_button ('Add a Bookmark')
     expect(page).to have_current_path('/add')
     expect(page).to have_content "Add a bookmark"
   end
