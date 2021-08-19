@@ -18,13 +18,15 @@ class Manager < Sinatra::Base
   end
 
   post '/add' do
+
+    Bookmark.add(params[:url])
     redirect '/'
   end
 
   get '/bookmarks' do 
     
     @bookmark = Bookmark.all
-  
+    
     erb :bookmark_bar
   end 
   
