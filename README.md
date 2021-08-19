@@ -9,8 +9,8 @@ So I know what I have bookmarked
 I need to to print a list of bookmarks
 
 As a User
-So that I can save a website
-I would like to add the site's address and title to the bookmark manager
+So that I can remember the websites I've visited
+I would like to add the site's url to the bookmark manager
 
 ```
 
