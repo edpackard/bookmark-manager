@@ -7,12 +7,9 @@ end
 
 feature "Display list of bookmarks" do 
   scenario "makes get request to /bookmarks route" do 
-  connection = PG.connect(dbname: 'bookmark_manager_test')
-
-    # Add the test data
-    connection.exec("INSERT INTO bookmarks VALUES(1, 'http://www.makersacademy.com');")
-
-    visit "/bookmarks"
+    visit '/'
+    Bookmark.add('http://www.makersacademy.com')
+    click_button 'View'
     expect(page).to have_content("http://www.makersacademy.com")
   end 
 end 

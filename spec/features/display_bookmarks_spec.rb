@@ -2,16 +2,9 @@ require 'pg'
 
 feature "Prints saved bookmarks" do 
   scenario "Outputs list of bookmarks" do 
-    connection = PG.connect(dbname: 'bookmark_manager_test')
-
-    # Add the test data
-    connection.exec("INSERT INTO bookmarks VALUES(1, 'http://www.makersacademy.com');")
-    connection.exec("INSERT INTO bookmarks VALUES(2, 'http://www.destroyallsoftware.com');")
-    connection.exec("INSERT INTO bookmarks VALUES(3, 'http://www.google.com');")
-
+    urls = ['http://www.makersacademy.com', 'http://www.destroyallsoftware.com', 'http://www.google.com']
+    urls.each { |url| Bookmark.add(url) }
     visit "/bookmarks"
-    expect(page).to have_content "http://www.makersacademy.com"
-    expect(page).to have_content "http://www.destroyallsoftware.com"
-    expect(page).to have_content "http://www.google.com"
+    urls.each { |url| expect(page).to have_content url }
   end
 end 
