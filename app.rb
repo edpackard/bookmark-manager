@@ -14,7 +14,11 @@ class Manager < Sinatra::Base
   end
 
   get '/add' do
-    'Add a bookmark'
+    erb(:add)
+  end
+
+  post '/add' do
+    redirect '/'
   end
 
   get '/bookmarks' do 
