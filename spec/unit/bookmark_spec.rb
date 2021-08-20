@@ -5,17 +5,16 @@ describe Bookmark do
   describe '.all' do
 
     it 'returns all bookmarks' do
-      Bookmark.add('http://www.makersacademy.com', 'Makers')
+      bookmark = Bookmark.add('http://www.makersacademy.com', 'Makers')
       Bookmark.add('http://www.destroyallsoftware.com', 'Destroy')
       Bookmark.add('http://www.google.com', 'Google')
     
       bookmarks = Bookmark.all
 
-      p bookmarks
-
-      expect(bookmarks).to include "http://www.makersacademy.com"
-      expect(bookmarks).to include "http://www.google.com"
-      expect(bookmarks).to include "http://www.destroyallsoftware.com"
+      expect(bookmarks.length).to eq 3
+      expect(bookmarks.first.url).to eq('http://www.makersacademy.com')
+      expect(bookmarks.first.id).to eq(bookmark.id)
+      expect(bookmarks[2].url).to eq('http://www.google.com')
     end
   end
 
