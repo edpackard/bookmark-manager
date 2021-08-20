@@ -12,8 +12,8 @@ class Bookmark
   def self.all
     connect_to_db
     result = @connection.exec("SELECT * FROM bookmarks")
-    result.map { |bookmark| bookmark['url'] }
-    p result
+    result.map { |bmark| Bookmark.new(bmark['id'], bmark['url'], bmark['title']) }
+
   end  
 
   def self.add(url, title="No title given")

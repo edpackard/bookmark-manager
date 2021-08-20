@@ -8,8 +8,8 @@ end
 feature "Display list of bookmarks" do 
   scenario "makes get request to /bookmarks route" do 
     visit '/'
-    Bookmark.add('http://www.makersacademy.com')
+    Bookmark.add('http://www.makersacademy.com', 'Makers')
     click_button 'View'
-    expect(page).to have_content("http://www.makersacademy.com")
+    expect(page).to have_link('Makers', href: "http://www.makersacademy.com")
   end 
 end 

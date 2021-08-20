@@ -23,9 +23,7 @@ class Manager < Sinatra::Base
   end
 
   get '/bookmarks' do 
-    
     @bookmark = Bookmark.all
-    
     erb :bookmark_bar
   end 
   

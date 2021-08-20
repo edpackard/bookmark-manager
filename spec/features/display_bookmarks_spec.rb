@@ -2,9 +2,11 @@ require 'pg'
 
 feature "Prints saved bookmarks" do 
   scenario "Outputs list of bookmarks" do 
-    urls = ['http://www.makersacademy.com', 'http://www.destroyallsoftware.com', 'http://www.google.com']
-    urls.each { |url| Bookmark.add(url) }
+    Bookmark.add('http://www.makersacademy.com', 'Makers')
+    Bookmark.add('http://www.facebook.com', 'Facebook')
     visit "/bookmarks"
-    urls.each { |url| expect(page).to have_content url }
+    expect(page).to have_link('Facebook', href: 'http://www.facebook.com')
+    expect(page).to have_link('Makers', href: 'http://www.makersacademy.com')
+    
   end
 end 
