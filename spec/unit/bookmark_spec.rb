@@ -18,10 +18,11 @@ describe Bookmark do
   end
 
   describe '.add' do
-    it 'should add a string to the database' do 
-      Bookmark.add('www.facebook.com', 'Facebook')
-      expect(Bookmark.url).to eq "www.facebook.com" 
-      expect(Boommark.title).to eq 'Facebook'
+    it 'create a new bookmark object' do 
+      bookmark = Bookmark.add('www.facebook.com', 'Facebook')
+      expect(bookmark).to be_a(Bookmark)
+      expect(bookmark.url).to eq "www.facebook.com" 
+      expect(bookmark.title).to eq 'Facebook'
     end
   end
 
