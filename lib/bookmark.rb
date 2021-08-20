@@ -7,9 +7,9 @@ class Bookmark
     result.map { |bookmark| bookmark['url'] }
   end  
 
-  def self.add(url)
+  def self.add(url, title="No title given")
     connect_to_db
-    result = @connection.exec("INSERT INTO bookmarks (url) VALUES ('#{url}')")
+    result = @connection.exec("INSERT INTO bookmarks (url, title) VALUES ('#{url}', '#{title}')")
   end
 
   private 

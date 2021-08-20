@@ -19,9 +19,9 @@ describe Bookmark do
 
   describe '.add' do
     it 'should add a string to the database' do 
-      Bookmark.add('www.facebook.com')
-    
-      expect(Bookmark.all).to include "www.facebook.com" 
+      Bookmark.add('www.facebook.com', 'Facebook')
+      expect(Bookmark.url).to eq "www.facebook.com" 
+      expect(Boommark.title).to eq 'Facebook'
     end
   end
 
